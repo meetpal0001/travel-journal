@@ -1,0 +1,279 @@
+.leftPage img {
+
+    width: 300px;
+
+}
+
+.imageDet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    transform: translate(-50%, -50%) rotateY(-180deg) rotatex(10deg) !important;
+}
+
+* {
+    font-family: 'Brush Script MT', cursive;
+
+}
+
+.rightPage h1 {
+    width: 100%;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: n;
+}
+
+a img {
+    transition: all 0.5s;
+}
+
+a:hover img {
+    transform: scale(1.1, 1.1);
+    filter: drop-shadow(10px 10px 10px gray);
+}
+
+
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    z-index: -100;
+
+}
+
+.date {
+    font-size: larger;
+}
+
+.desc {
+    margin: auto 20px;
+    font-size: large;
+
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.entry {
+    height: 450px;
+}
+
+h2,
+h1,
+.date {
+    text-align: center;
+}
+
+
+
+
+
+
+.rightPage,
+.leftPage {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0s;
+}
+
+.rightPage {
+    transform: rotateX(10deg);
+
+}
+
+
+
+.dummyPage,
+.page {
+    height: 560px;
+    width: 500px;
+    background-color: white;
+    position: absolute;
+    border-radius: 2px 10px 10px 2px;
+    transform: rotateX(10deg);
+    color: rgb(0, 14, 27);
+    transition: transform 2s;
+    transform-origin: center left;
+    transition-delay: 0.5s;
+}
+
+
+
+.flipped {
+    transform: rotateX(10deg) rotateY(-180deg);
+    z-index: 6 !important;
+}
+
+.flipped a {
+    z-index: 6 !important;
+}
+
+
+.active {
+    opacity: 1 !important;
+    transition: opacity 0.5s ease-in-out 2.5s !important;
+}
+
+
+.dummyPage {
+    z-index: -1;
+    animation-name: flipPage;
+
+}
+
+.cover,
+.back {
+    width: 520px;
+    height: 600px;
+    transition-duration: 2s;
+    transition-property: transform;
+    background: #353755;
+    border-radius: 2px 20px 20px 2px;
+    position: absolute;
+    box-shadow: 1px 1px 10px gray;
+    transform: rotateX(10deg)
+}
+
+.cover {
+    animation-name: flipCover;
+
+}
+
+
+
+
+.cover,
+.dummyPage {
+
+    transform-origin: center left;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+
+.dummyPage:nth-child(6) {
+    animation-duration: 6s;
+}
+
+.dummyPage:nth-child(5) {
+    animation-duration: 5.6s;
+}
+
+.dummyPage:nth-child(4) {
+    animation-duration: 5.2s;
+}
+
+.dummyPage:nth-child(3) {
+    animation-duration: 4.8s;
+
+}
+
+
+
+
+
+
+.dummyPage:nth-child(2) {
+
+    animation-duration: 4.4s;
+
+}
+
+
+
+@keyframes flipPage {
+    0% {
+        transform: rotateX(10deg) rotateY(0deg);
+    }
+
+    25% {
+        z-index: -1;
+    }
+
+    40% {
+        z-index: 2;
+    }
+
+    100% {
+        z-index: 2;
+        transform: rotateX(10deg) rotateY(-180deg);
+    }
+}
+
+
+@keyframes flipCover {
+    0% {
+        transform: rotateX(10deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(10deg) rotateY(-180deg);
+    }
+}
+
+@keyframes disappear {
+    25% {
+        opacity: 100%;
+    }
+
+    45% {
+        opacity: 100%;
+
+    }
+
+    90% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.coverHeading {
+    text-align: center;
+    font-size: 50px;
+    padding-top: 33%;
+    color: aliceblue;
+    animation-name: disappear;
+    animation-duration: 0.9s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+
+}
+
+.book {
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+#leftArrow {
+    margin-right: 1400px;
+}
+
+#leftArrow,
+#rightArraow {
+    width: 100px;
+    position: absolute;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+#leftArrow:hover,
+#rightArraow:hover {
+    filter: drop-shadow(10px 10px 10px gray);
+}
+
+#rightArraow {
+    transform: rotateY(180deg);
+    margin-left: 1400px;
+}
