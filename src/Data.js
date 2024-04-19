@@ -1,4 +1,4 @@
-export default [
+let Data=[
   {
     "title": "Exploring the Streets of Paris",
     "location": "Paris, France",
@@ -90,3 +90,5 @@ export default [
     "imageUrl": "A_tour_in_Prague_particularly_its_Prague_Castle_.jpg"
   }
 ]
+
+export default Data
